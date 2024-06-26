@@ -1,0 +1,21 @@
+def calculate_total_amount():
+    denominations = [2000, 500, 200, 100]
+    total_balance = 0
+    
+    # Iterate through each denomination
+    for i in range(len(denominations)):
+        # Input from user for each denomination
+        denomination = int(input(f"Enter the {i+1} Denomination: "))
+        num_notes = int(input(f"Enter the {i+1} Denomination number of notes: "))
+        
+        # Calculate the amount for this denomination
+        amount = denomination * num_notes
+        
+        # Add to total balance
+        total_balance += amount
+    
+    # Print the total available balance
+    print(f"Total Available Balance in ATM: {total_balance}")
+
+# Call the function to start the program
+calculate_total_amount()
