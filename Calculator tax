@@ -1,0 +1,30 @@
+
+def calculate_tax(income):
+    if income <= 150000:
+        tax = 0
+    elif income <= 300000:
+        tax = (income - 150000) * 0.1
+    elif income <= 500000:
+        tax = 15000 + (income - 300000) * 0.2
+    else:
+        tax = 45000 + (income - 500000) * 0.3
+    
+    return int(tax)  # Convert tax to integer for whole rupee amount
+
+def main():
+    try:
+        income = float(input("Enter the income: "))
+        
+        if income < 0:
+            print("Income cannot be negative. Please enter a valid income.")
+            return
+        
+        tax = calculate_tax(income)
+        
+        print(f"Tax = {tax}")
+    
+    except ValueError:
+        print("Invalid input. Please enter a valid number.")
+
+if __name__ == "__main__":
+    main()
