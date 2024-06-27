@@ -1,0 +1,32 @@
+
+def check_voting_eligibility():
+    try:
+        age = int(input("Enter your age: "))
+        
+        if age >= 18:
+            print("You are eligible to vote.")
+        else:
+            years_to_wait = 18 - age
+            if years_to_wait == 1:
+                print("You will be eligible to vote next year.")
+            else:
+                print(f"You are allowed to vote after {years_to_wait} years.")
+    
+    except ValueError:
+        print("Invalid input. Please enter a valid age.")
+
+# Test cases
+print("Test Case a:")
+check_voting_eligibility()
+
+print("\nTest Case b:")
+check_voting_eligibility()
+
+print("\nTest Case c:")
+check_voting_eligibility()
+
+print("\nTest Case d:")
+check_voting_eligibility()
+
+print("\nTest Case e:")
+check_voting_eligibility()
