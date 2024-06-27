@@ -1,0 +1,42 @@
+
+def decimal_to_binary(decimal_number):
+    try:
+        # Convert decimal number to binary using Python's built-in bin() function
+        binary_number = bin(decimal_number).replace("0b", "")
+        return binary_number
+    except ValueError:
+        return "Invalid input. Please enter a valid decimal number."
+
+def decimal_to_octal(decimal_number):
+    try:
+        # Convert decimal number to octal using Python's built-in oct() function
+        octal_number = oct(decimal_number).replace("0o", "")
+        return octal_number
+    except ValueError:
+        return "Invalid input. Please enter a valid decimal number."
+
+# Function to handle test cases
+def handle_test_cases():
+    test_cases = [
+        111,
+        15.2,
+        0,
+        "B12",
+        "1A.2"
+    ]
+    
+    for test_case in test_cases:
+        try:
+            decimal_number = int(test_case)
+            binary_result = decimal_to_binary(decimal_number)
+            octal_result = decimal_to_octal(decimal_number)
+            
+            print(f"Decimal Number: {decimal_number}")
+            print(f"Binary Number = {binary_result}")
+            print(f"Octal Number = {octal_result}\n")
+        
+        except ValueError:
+            print(f"Invalid input: '{test_case}' is not a valid decimal number.\n")
+
+# Run the test cases
+handle_test_cases()
