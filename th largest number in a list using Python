@@ -1,0 +1,27 @@
+
+def find_nth_largest_number(nums, N):
+    # Check if N is within valid range
+    if N <= 0 or N > len(nums):
+        return None
+    
+    # Sort the list in descending order
+    sorted_nums = sorted(nums, reverse=True)
+    
+    # Return the Nth largest number
+    return sorted_nums[N - 1]
+
+# Test cases
+test_cases = [
+    ([14, 67, 48, 23, 5, 62], 4),  # Sample Input
+    ([14, 67, 48, 23, 5, 62], 0),  # N = 0 (invalid)
+    ([14, 67, 48, 23, 5, 62], -5), # N = -5 (invalid)
+    ([14, 67, 48, 23, 5, 62], 1),  # N = 1 (largest number)
+    ([14, 67, 48, 23, 5, 62], 7),  # N > length of list (invalid)
+]
+
+for nums, N in test_cases:
+    result = find_nth_largest_number(nums, N)
+    if result is not None:
+        print(f"{N}th Largest number:", result)
+    else:
+        print(f"Invalid input for N = {N}")
