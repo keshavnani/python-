@@ -1,0 +1,30 @@
+
+def calculate_users(total_users, staff_users):
+    if total_users <= 0 or staff_users <= 0:
+        return "Invalid input. Total users and staff users must be positive integers."
+
+    # Calculate the number of non-teaching staff users
+    non_teaching_staff = staff_users // 3
+
+    # Calculate the number of student users
+    student_users = total_users - staff_users - non_teaching_staff
+
+    # Ensure non-teaching staff does not exceed staff users
+    non_teaching_staff = min(non_teaching_staff, staff_users)
+
+    return f"Student Users: {student_users}\nNon-teaching Staff Users: {non_teaching_staff}\nStaff Users: {staff_users}"
+
+# Test cases
+test_cases = [
+    (0, 0),
+    (-143, 0),
+    (1026, 1026),
+    (450, 540),
+    (600, 450)
+]
+
+for idx, (total, staff) in enumerate(test_cases):
+    print(f"Test Case {idx + 1}:")
+    print(f"Total Users: {total}, Staff Users: {staff}")
+    print(calculate_users(total, staff))
+    print()
