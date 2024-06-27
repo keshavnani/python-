@@ -1,0 +1,55 @@
+
+def calculate_grade(marks):
+    total = sum(marks)
+    aggregate = total / len(marks)
+    
+    if aggregate > 75:
+        grade = "DISTINCTION"
+    elif aggregate >= 60:
+        grade = "First Division"
+    elif aggregate >= 50:
+        grade = "Second Division"
+    elif aggregate >= 40:
+        grade = "Third Division"
+    else:
+        grade = "Fail"
+    
+    return total, aggregate, grade
+
+# Function to handle input and output
+def calculate_student_result():
+    try:
+        python_marks = float(input("Enter the marks in Python: "))
+        c_marks = float(input("Enter the marks in C Programming: "))
+        math_marks = float(input("Enter the marks in Mathematics: "))
+        physics_marks = float(input("Enter the marks in Physics: "))
+        
+        marks = [python_marks, c_marks, math_marks, physics_marks]
+        
+        total, aggregate, grade = calculate_grade(marks)
+        
+        print(f"Total = {total}")
+        print(f"Aggregate = {aggregate}")
+        print(grade)
+    
+    except ValueError:
+        print("Invalid input. Please enter valid numerical marks.")
+
+# Test cases
+test_cases = [
+    [18, 76, 93, 65],
+    [73, 78, 79, 75],
+    [98, 106, 120, 95],
+    [96, 73, -85, 95],
+    [78, 59.8, 76, 79],
+]
+
+for idx, marks in enumerate(test_cases):
+    print(f"\nTest Case {idx + 1}:")
+    total, aggregate, grade = calculate_grade(marks)
+    print(f"Total = {total}")
+    print(f"Aggregate = {aggregate}")
+    print(grade)
+
+# Uncomment the line below to test the interactive input/output function
+# calculate_student_result()
