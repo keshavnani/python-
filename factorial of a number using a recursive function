@@ -1,0 +1,31 @@
+
+def factorial(n):
+    # Base case: factorial of 0 is 1
+    if n == 0:
+        return 1
+    # Recursive case: factorial of n is n * factorial(n-1)
+    else:
+        return n * factorial(n - 1)
+
+# Function to handle input and output
+def calculate_factorial():
+    try:
+        n = int(input("Enter the value of n: "))
+        if n < 0:
+            print("Factorial is not defined for negative numbers.")
+        else:
+            result = factorial(n)
+            print(f"The factorial of {n} is: {result}")
+    except ValueError:
+        print("Invalid input. Please enter a valid integer.")
+
+# Test cases
+test_cases = [0, -5, 1]
+
+for n in test_cases:
+    print(f"Test Case: n = {n}")
+    if n < 0:
+        print("Factorial is not defined for negative numbers.")
+    else:
+        result = factorial(n)
+        print(f"The factorial of {n} is: {result}")
