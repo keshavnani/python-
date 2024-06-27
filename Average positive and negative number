@@ -1,0 +1,50 @@
+
+def calculate_average(numbers):
+    total_positive = 0
+    count_positive = 0
+    total_negative = 0
+    count_negative = 0
+
+    for num in numbers:
+        if num == -1:
+            break
+        elif num > 0:
+            total_positive += num
+            count_positive += 1
+        elif num < 0:
+            total_negative += num
+            count_negative += 1
+    
+    if count_positive > 0:
+        avg_positive = total_positive / count_positive
+    else:
+        avg_positive = 0
+    
+    if count_negative > 0:
+        avg_negative = total_negative / count_negative
+    else:
+        avg_negative = 0
+    
+    return avg_positive, avg_negative
+
+def main():
+    numbers = []
+    
+    while True:
+        try:
+            num = int(input("Enter the number: "))
+            numbers.append(num)
+            if num == -1:
+                break
+        except ValueError:
+            print("Invalid input. Enter a valid number.")
+    
+    avg_positive, avg_negative = calculate_average(numbers)
+    
+    print(f"The average of positive numbers is: {avg_positive}")
+    print(f"The average of negative numbers is: {avg_negative}")
+
+# Test the program
+if __name__ == "__main__":
+    print("Enter -1 to exit...")
+    main()
