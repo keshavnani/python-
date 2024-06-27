@@ -1,0 +1,17 @@
+
+def fibonacci_sequence(n):
+    # Initialize the first two Fibonacci numbers
+    fib_sequence = [0, 1]
+    
+    # Generate Fibonacci sequence up to the nth number
+    for i in range(2, n):
+        next_fib = fib_sequence[-1] + fib_sequence[-2]
+        fib_sequence.append(next_fib)
+    
+    # Print the Fibonacci sequence up to the nth number
+    for num in fib_sequence:
+        print(num, end=" ")
+
+# Example usage:
+N = 8  # Find the Fibonacci numbers up to the 8th number (0, 1, 1, 2, 3, 5, 8, 13)
+fibonacci_sequence(N)
